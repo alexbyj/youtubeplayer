@@ -9,11 +9,18 @@ class App extends Component {
 
   componentWillMount() {
     const database = new Database()
-    database.get()
+    // database.get()
+    // .then(result => {
+    //   this.setState({
+    //     videos: result
+    //   })
+    // })
+    database.getMovies()
     .then(result => {
-      this.setState({
-        videos: result
-      })
+      return result.json();
+    }).then(result => {
+      console.log('#### result = ', result)
+      this.setState({videos: result.data.movies})
     })
   }
 
@@ -22,7 +29,7 @@ class App extends Component {
       return (
         <div className="App">
           {this.state.videos.map((video, index) => {
-            return <Video title={video.title} poster={video.poster} key={index}/>
+            return <Video title={video.title} poster={video.background_image} key={index}/>
           })} 
         </div>
       );

@@ -13,6 +13,10 @@ export class Database {
     }
   }
 
+  getMovies(query) {
+    return fetch('https://yts.am/api/v2/list_movies.json')
+  }
+
   get(query) {
     return new Promise((resolve, reject) => {
       global.firebase.firestore()
