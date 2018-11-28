@@ -7,7 +7,6 @@ import { Database, getMovies } from './Data'
 import _ from 'lodash';
 
 class App extends Component {
-
   componentWillMount() {
     const database = new Database()
     this._getMovies() 
