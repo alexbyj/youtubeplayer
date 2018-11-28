@@ -14,7 +14,6 @@ class App extends Component {
 
   async _getMovies() {
     let movies = await getMovies()
-    console.log('#### movies = ', movies)
     this.setState({videos: movies.data.movies})
   }
 
