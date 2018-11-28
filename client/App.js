@@ -1,27 +1,22 @@
+import 'babel-polyfill';
 import React, { Component } from 'react'
 import './App.scss'
 import Video from './Video'
 import Loading from './Loading'
-import { Database } from './Data'
+import { Database, getMovies } from './Data'
 import _ from 'lodash';
 
 class App extends Component {
 
   componentWillMount() {
     const database = new Database()
-    // database.get()
-    // .then(result => {
-    //   this.setState({
-    //     videos: result
-    //   })
-    // })
-    database.getMovies()
-    .then(result => {
-      return result.json();
-    }).then(result => {
-      console.log('#### result = ', result)
-      this.setState({videos: result.data.movies})
-    })
+    this._getMovies() 
+  }
+
+  async _getMovies() {
+    let movies = await getMovies()
+    console.log('#### movies = ', movies)
+    this.setState({videos: movies.data.movies})
   }
 
   render() {

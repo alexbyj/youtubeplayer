@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import firebase from 'firebase'
 import _ from 'lodash';
 
@@ -11,10 +12,6 @@ export class Database {
         projectId: "doijukebox"
       })
     }
-  }
-
-  getMovies(query) {
-    return fetch('https://yts.am/api/v2/list_movies.json')
   }
 
   get(query) {
@@ -42,4 +39,12 @@ export class Database {
 
     })
   }
+}
+
+exports.getMovies = function() {
+  return fetch('https://yts.am/api/v2/list_movies.json')
+  .then(result => result.json())
+  .catch(error => {
+    console.log('#### error getMovies = ', error)
+  })
 }
