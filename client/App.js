@@ -13,8 +13,8 @@ class App extends Component {
   }
 
   async _getMovies() {
-    let movies = await getMovies();
-    this.setState({videos: movies.data.movies});
+    let [movies] = await Promise.all([getMovies()])
+    this.setState({videos: movies.data.movies})
   }
 
   render() {
