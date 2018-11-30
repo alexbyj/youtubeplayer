@@ -45,6 +45,6 @@ exports.getMovies = function() {
   return fetch('https://yts.am/api/v2/list_movies.json')
   .then(result => result.json())
   .catch(error => {
-    console.log('#### error getMovies = ', error)
+    console.log('###### error getMovies = ', error)
   })
 }
