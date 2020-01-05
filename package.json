@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": "Baek",
   "scripts": {
     "build-watch": "parcel watch ./client/index.html",
     "start-watch": "nodemon server/index.js",
