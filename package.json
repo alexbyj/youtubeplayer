@@ -18,7 +18,7 @@
     "firebase": "^5.5.9",
     "gh-pages": "^2.0.1",
     "google-auth-library": "^2.0.1",
-    "googleapis": "^34.0.0",
+    "googleapis": "^39.1.0",
     "lodash": "^4.17.11",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
